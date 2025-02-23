@@ -2,7 +2,10 @@
 
 #include <bits/stdc++.h>
 
-void file_to_vector(std::string file_name) {
+std::vector<double> contributions = {4, 3, 12, 12, 8, 4, 11, 6, 18};
+std::vector<double> averages;
+
+std::vector<std::vector<double>> file_to_vector(std::string file_name) {
     // Initializing a vector to hold all raw data
     std::vector<std::vector<double>> rawData;
     
@@ -39,7 +42,6 @@ void file_to_vector(std::string file_name) {
             // Add the current vector of numbers to the overall raw data vector
             rawData.push_back(currentDataCategory);
         }
-
         // // test vector contents
         // for (std::vector<double> current: rawData) {
         //     for (int i = 0; i < current.size(); i++){
@@ -50,13 +52,38 @@ void file_to_vector(std::string file_name) {
         
         // Close the file
         file.close();
+        return rawData;
     } else {
         std::cout << strerror(errno) << std::endl;
+        return {{-1}};
     }
+}
+
+double perusall_contribution(std::vector<double> v) {
+    double value = v[0];
+    double contribution;
+    if(2.5 <= value <= 3) {
+        contribution = 4;
+    } else if(2 <= value < 2.5){
+        contribution = 3;
+    } else if(1.5 <= value < 2){
+        contribution = 2;
+    } else if(1 <= value < 1.5) {
+        contribution = 1;
+    } else if(0 <= value < 1) {
+        contribution = 0;
+    } else {
+        std::cout << "Invalid Peruall Input (Check line 1 of file)" << std::endl;
+        contribution = -1;
+    }
+    // // test
+    // std::cout << contribution << std::endl;
+    return contribution;
 }
 
 int main()
 {
-    file_to_vector("examplefromdranthony.txt");
+    std::vector<std::vector<double>> rawData = file_to_vector("examplefromdranthony.txt");
+    double perusall = perusall_contribution(rawData[0]);
     return 0;
 }
