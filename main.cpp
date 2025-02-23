@@ -81,9 +81,40 @@ double perusall_contribution(std::vector<double> v) {
     return contribution;
 }
 
+
+double average(std::vector<double> v) {
+    double sum;
+    for(double d: v) {
+        sum += d;
+    }
+    return sum/v.size();
+}
+
+double hw_contribution(std::vector<std::vector<double>> v) {
+    std::vector<double> potential_scores = v[2];
+    std::vector<double> raw_scores = v[3];
+    std::vector<double> on_time = v[4];
+    std::vector<double> late = v[5];
+
+    std::vector<double> averages;
+    for(int i = 0; i < 6; i++) {
+        double avg = 100*(raw_scores[i]/potential_scores[i]);
+        if(count(on_time.begin(), on_time.end(), i + 1)){
+            avg += 5;
+        } if(count(late.begin(), late.end(), i + 1)){
+            avg -= 50;
+        }
+        averages.push_back(avg);
+    }
+    // Need to add excluding late penalty from lowest late hw
+    std::cout << average(averages) << std::endl;
+    return average(averages);
+}
+
 int main()
 {
     std::vector<std::vector<double>> rawData = file_to_vector("examplefromdranthony.txt");
     double perusall = perusall_contribution(rawData[0]);
+    double hw = hw_contribution(rawData);
     return 0;
 }
