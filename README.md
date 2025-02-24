@@ -112,4 +112,5 @@ https://www.geeksforgeeks.org/copy-file-to-vector-in-cpp-stl/
 https://www.geeksforgeeks.org/std-find-in-cpp/
 https://www.geeksforgeeks.org/input-in-cpp/
 https://www.geeksforgeeks.org/how-to-use-cin-fail-method-in-cpp/
+https://www.geeksforgeeks.org/iterators-c-stl/
 
