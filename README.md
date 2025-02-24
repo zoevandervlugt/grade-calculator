@@ -80,4 +80,6 @@ https://en.cppreference.com/w/cpp/container/vector
 https://www.geeksforgeeks.org/vector-of-vectors-in-c-stl-with-examples/
 https://www.geeksforgeeks.org/copy-file-to-vector-in-cpp-stl/
 https://www.geeksforgeeks.org/std-find-in-cpp/
+https://www.geeksforgeeks.org/input-in-cpp/
+https://www.geeksforgeeks.org/how-to-use-cin-fail-method-in-cpp/
 

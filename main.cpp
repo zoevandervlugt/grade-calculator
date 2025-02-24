@@ -210,7 +210,18 @@ std::string exam_replacement() {
 
 int main()
 {
-    std::vector<std::vector<double>> rawData = file_to_vector("examplefromdranthony.txt");
+    std::string file_name;
+    std::cout << "Enter a file name: " << std::endl;
+    std::cin >> file_name;
+    if(std::cin.fail()) {
+        std::cout << "Invalid Input." << std::endl;
+        std::cin.clear();
+    }
+    std::cout << std::endl;
+
+    std::vector<std::vector<double>> rawData = file_to_vector(file_name);
+
+    std::cout << "File Name: " << file_name << std::endl;
 
     double perusall = perusall_contribution(rawData[0]);
     std::cout << "Perusall Readings: " << perusall << std::endl;
