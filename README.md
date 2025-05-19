@@ -1,5 +1,9 @@
 # Algorithms Grade Calculator
 
+## Disclaimer
+
+This repository contains coursework from my Algorithms class at Southwestern University. All code is original unless otherwise noted. Do not submit this code as your own in any academic setting.
+
 ## Overview
 
 This program is designed to read a file containing raw grade data and calculate the final grade based on various components such as Perusall readings, homework, projects, and exams. It applies specific grading policies, including late penalties and replacement rules for exams, to determine the final course score.
